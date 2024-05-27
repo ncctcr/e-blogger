@@ -45,7 +45,7 @@ function ResponsiveAppBar() {
     }
 
     return (
-        <AppBar position="sticky">
+        <AppBar position="sticky" sx={{zIndex: 2}}>
             <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <BookIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
