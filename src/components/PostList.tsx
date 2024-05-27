@@ -7,7 +7,10 @@ import PostCard from "@/components/PostCard";
 import SkeletonList from "@/components/SkeletonList";
 import AlertMessage from "@/components/AlertMessage";
 import Pagination from '@mui/material/Pagination';
+import AddNewPostButton from "@/components/AddNewPostButton";
+import {useSession} from "next-auth/react";
 const PostList = () => {
+    const session = useSession()
     const store = useAppStore()
     const initialized = useRef(false)
 
@@ -56,6 +59,7 @@ const PostList = () => {
                     />
                 </Box>
             )}
+            {session.data && <AddNewPostButton/>}
         </>
     )
 }

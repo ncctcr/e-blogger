@@ -12,7 +12,6 @@ const Posts = () => {
     return (
         <>
             <CustomBreadcrumbs current={'Posts'}/>
-            <AddNewPostButton/>
             <PostList/>
         </>
     );
