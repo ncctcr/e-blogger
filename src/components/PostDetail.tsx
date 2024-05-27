@@ -17,6 +17,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 import {truncateString} from "@/utils/functions";
 import {useRouter} from "next/navigation";
+import Loading from "@/components/Loading";
 
 type TypeProps = {
     id: number
@@ -27,6 +28,7 @@ const PostDetail: FC<TypeProps> = ({ id }) => {
     const store = useAppStore()
     const initialized = useRef(false)
     const [editMode, setEditMode] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const {
         post,
@@ -54,10 +56,16 @@ const PostDetail: FC<TypeProps> = ({ id }) => {
                 cancelButtonText: 'Cancel',
                 showCancelButton: true,
                 reverseButtons: true,
-            }).then(async (result) => {
+                confirmButtonColor: '#fc4646'
+            }).then((result) => {
                 if (result.isConfirmed) {
-                    await store.dispatch(deletePost(post.id))
-                    router.push('/posts')
+                    setLoading(true)
+                    store.dispatch(deletePost(post.id)).then(() => {
+                        setLoading(false)
+                        router.push('/posts')
+                    }).catch(() => {
+                        setLoading(false)
+                    })
                 }
             })
         }
@@ -100,6 +108,7 @@ const PostDetail: FC<TypeProps> = ({ id }) => {
             )}
             {status === 'loading' && (<Skeleton variant="rounded" width="100%" height={370} />)}
             {error && (<AlertMessage variant={'error'} title={'Error'} body={error} />)}
+            {loading && <Loading/>}
         </Box>
     );
 };
