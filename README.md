@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Learn more
 
-To learn more about this example:
+To learn more about this blog:
 
 - [Next.js documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
