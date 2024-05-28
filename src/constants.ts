@@ -42,3 +42,15 @@ export const LIBRARIES = [
     {title: 'Next Auth (Authentication)', detail: 'next-auth'},
     {title: 'Mock User Auth (Store users)', detail: 'mock-user-auth'},
 ]
+
+
+export const PUBLIC_ROUTES = [
+    {title: 'Login', link: '/login'},
+    {title: 'Registration', link: '/registration'},
+    {title: 'Posts', link: '/posts'},
+    {title: 'Post detail', link: '/posts/1'},
+]
+
+export const PROTECTED_ROUTES = [
+    {title: 'Add new post', link: '/posts/new'},
+]
