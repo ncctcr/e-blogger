@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {createPostService, deletePostService, fetchPostByIdService, fetchPostsService} from "@/services/post.service";
+import {createPostService, deletePostService, fetchPostByIdService, fetchPostsService} from "@/services/posts.service";
 import {IPost} from "@/models/Post";
 
 export const fetchDetailPost = createAsyncThunk(
