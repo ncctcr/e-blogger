@@ -18,12 +18,14 @@ import Swal from "sweetalert2";
 import {truncateString} from "@/utils/functions";
 import {useRouter} from "next/navigation";
 import Loading from "@/components/Loading";
+import {useSession} from "next-auth/react";
 
 type TypeProps = {
     id: number
 }
 
 const PostDetail: FC<TypeProps> = ({ id }) => {
+    const session = useSession()
     const router = useRouter()
     const store = useAppStore()
     const initialized = useRef(false)
@@ -92,18 +94,20 @@ const PostDetail: FC<TypeProps> = ({ id }) => {
                             </>
                         )}
                     </CardContent>
-                    <CardActions sx={{justifyContent: 'end'}}>
-                        <Tooltip title="Edit" placement='top' arrow>
-                            <IconButton size="small" onClick={toggleEditMode} color={editMode ? 'primary' : 'inherit'}>
-                                <EditIcon fontSize={'small'}/>
-                            </IconButton>
-                        </Tooltip>
-                        <Tooltip title="Delete" placement='top' arrow>
-                            <IconButton size="small" onClick={handleDelete}>
-                                <DeleteIcon fontSize={'small'}/>
-                            </IconButton>
-                        </Tooltip>
-                    </CardActions>
+                    {session.data && (
+                        <CardActions sx={{justifyContent: 'end'}}>
+                            <Tooltip title="Edit" placement='top' arrow>
+                                <IconButton size="small" onClick={toggleEditMode} color={editMode ? 'primary' : 'inherit'}>
+                                    <EditIcon fontSize={'small'}/>
+                                </IconButton>
+                            </Tooltip>
+                            <Tooltip title="Delete" placement='top' arrow>
+                                <IconButton size="small" onClick={handleDelete}>
+                                    <DeleteIcon fontSize={'small'}/>
+                                </IconButton>
+                            </Tooltip>
+                        </CardActions>
+                    )}
                 </Card>
             )}
             {status === 'loading' && (<Skeleton variant="rounded" width="100%" height={370} />)}
