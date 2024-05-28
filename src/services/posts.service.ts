@@ -35,6 +35,19 @@ export const createPostService = (data: Pick<IPost, 'title' | 'body'>): Promise<
     })
 }
 
+export const editPostService = (id: number, data: Pick<IPost, 'title' | 'body'>): Promise<IPost> => {
+    return new Promise<IPost>((resolve, reject) => {
+        axios.patch<IPost>(`${process.env.NEXT_PUBLIC_API_URL}/posts/${id}`, data)
+            .then((response) => {
+                resolve(response.data);
+            }).catch((error) => {
+            reject(error);
+        });
+    })
+}
+
+
+
 export const deletePostService = (id: number): Promise<{}> => {
     return new Promise<{}>((resolve, reject) => {
         axios.delete<{}>(`${process.env.NEXT_PUBLIC_API_URL}/posts/${id}`)

@@ -1,7 +1,7 @@
 'use client'
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {useAppSelector, useAppStore} from "@/store/hooks";
-import {deletePost, fetchDetailPost} from "@/store/features/postsSlice";
+import {deletePost, editPost, fetchDetailPost} from "@/store/features/postsSlice";
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -73,6 +73,17 @@ const PostDetail: FC<TypeProps> = ({ id }) => {
         }
     }
 
+    const handleSubmit = (values: {title: string, body: string}) => {
+        setLoading(true)
+        store.dispatch(editPost({id: id, ...values})).then(() => {
+            setLoading(false)
+            setEditMode(false)
+        }).catch(() => {
+            setLoading(false)
+        })
+
+    }
+
     return (
         <Box>
             {post && (
@@ -81,7 +92,7 @@ const PostDetail: FC<TypeProps> = ({ id }) => {
                         {editMode ? (
                             <PostForm
                                 initialValues={{title: post.title, body: post.body}}
-                                onSubmit={() => {}}
+                                onSubmit={handleSubmit}
                             />
                         ) : (
                             <>

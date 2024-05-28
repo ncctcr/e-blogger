@@ -1,5 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {createPostService, deletePostService, fetchPostByIdService, fetchPostsService} from "@/services/posts.service";
+import {
+    createPostService,
+    deletePostService,
+    editPostService,
+    fetchPostByIdService,
+    fetchPostsService
+} from "@/services/posts.service";
 import {IPost} from "@/models/Post";
 
 export const fetchDetailPost = createAsyncThunk(
@@ -80,6 +86,27 @@ export const deletePost = createAsyncThunk(
     }
 )
 
+export const editPost = createAsyncThunk(
+    'posts/editPost',
+    async function (data: Pick<IPost, 'id' | 'title' | 'body'>, {rejectWithValue, dispatch, getState}) {
+        try {
+            const {posts} = (getState() as { posts: PostsState }).posts;
+            const response = await editPostService(data.id, {title: data.title, body: data.body});
+            const findPost = posts.find((i) => i.id === response.id)
+            if (findPost) {
+                dispatch(changePost(response))
+            }
+            dispatch(changeDetailPost(response))
+        } catch (error) {
+            if (error instanceof Error) {
+                return rejectWithValue(error.message);
+            } else {
+                return rejectWithValue('An unknown error occurred');
+            }
+        }
+    }
+)
+
 interface PostsState {
     page: number
     limit: number
@@ -113,8 +140,19 @@ const postsSlice = createSlice({
         addPost(state, action) {
             state.posts.push(action.payload)
         },
+        changePost(state, action) {
+            state.posts = state.posts.map((i) => {
+                if (i.id === action.payload.id) {
+                    return { ...action.payload }
+                }
+                return i
+            })
+        },
         changePage(state, action) {
             state.page = action.payload
+        },
+        changeDetailPost(state, action) {
+            state.detail.post = action.payload
         },
     },
     extraReducers: (builder) => {
@@ -177,7 +215,9 @@ const postsSlice = createSlice({
 
 export const {
     addPost,
+    changePost,
     changePage,
+    changeDetailPost,
 } = postsSlice.actions
 
 export default postsSlice.reducer
