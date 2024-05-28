@@ -32,7 +32,7 @@ export const LOREM_IPSUM_BODY = `
 export const LIBRARIES = [
     {title: 'ReactJS / NextJS (Frameworks)', detail: 'react / react-dom / next'},
     {title: 'Redux / Redux Toolkit (State Management)', detail: 'react-redux / @reduxjs/toolkit'},
-    {title: 'Material UI (UI/UX)', detail: '@mui/material / @mui/material-nextjs'},
+    {title: 'Material UI (UI/UX)', detail: '@mui/material / @mui/material-nextjs / @mui/icons-material'},
     {title: 'Axios (Requests)', detail: 'axios'},
     {title: 'SweetAlert2 (Modals)', detail: 'sweetalert2'},
     {title: 'Mui TipTap (Rich text editor)', detail: 'mui-tiptap / @tiptap/starter-kit'},
