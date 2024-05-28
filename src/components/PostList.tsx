@@ -17,6 +17,7 @@ const PostList = () => {
     const {
         page,
         limit,
+        count,
         posts,
         status,
         error
@@ -52,7 +53,7 @@ const PostList = () => {
             {status === 'resolved' && (
                 <Box display={'flex'} justifyContent={'center'} my={4}>
                     <Pagination
-                        count={10}
+                        count={Math.ceil(count / limit)}
                         page={page}
                         onChange={handlePageChange}
                         color="primary"

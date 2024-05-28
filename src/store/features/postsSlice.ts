@@ -25,8 +25,14 @@ export const fetchDetailPost = createAsyncThunk(
 
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
-    async function (params: {page: number, limit: number}, {rejectWithValue}) {
+    async function (params: {page: number, limit: number}, {rejectWithValue, dispatch, getState}) {
         try {
+            // crunch
+            const {count} = (getState() as { posts: PostsState }).posts;
+            if (!count) {
+                const response = await fetchPostsService(1, 999);
+                dispatch(setCount(response.length))
+            }
             return await fetchPostsService(params.page, params.limit);
         } catch (error) {
             if (error instanceof Error) {
@@ -110,6 +116,7 @@ export const editPost = createAsyncThunk(
 interface PostsState {
     page: number
     limit: number
+    count: number
     posts: IPost[]
     status: 'idle' | 'loading' | 'resolved' | 'rejected' | null
     error: string | null
@@ -123,6 +130,7 @@ interface PostsState {
 const initialState: PostsState = {
     page: 1,
     limit: 4,
+    count: 0,
     posts: [],
     status: null,
     error: null,
@@ -154,6 +162,10 @@ const postsSlice = createSlice({
         changeDetailPost(state, action) {
             state.detail.post = action.payload
         },
+        setCount(state, action) {
+            state.count = action.payload
+        },
+
     },
     extraReducers: (builder) => {
         builder
@@ -218,6 +230,7 @@ export const {
     changePost,
     changePage,
     changeDetailPost,
+    setCount
 } = postsSlice.actions
 
 export default postsSlice.reducer
