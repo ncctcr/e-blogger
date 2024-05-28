@@ -10,6 +10,7 @@ import {Grid} from "@mui/material";
 import LibrariesCard from "@/components/LibrariesCard";
 import RoutesCard from "@/components/RoutesCard";
 import {PROTECTED_ROUTES, PUBLIC_ROUTES} from "@/constants";
+import InfoCard from "@/components/InfoCard";
 
 export const metadata: Metadata = {
     title: 'Blog',
@@ -32,6 +33,9 @@ const App = () => {
                             </Grid>
                             <Grid item xs={12}>
                                 <RoutesCard title={'Protected routes'} routes={PROTECTED_ROUTES}/>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <InfoCard />
                             </Grid>
                         </Grid>
                     </Grid>
