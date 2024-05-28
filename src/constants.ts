@@ -45,6 +45,7 @@ export const LIBRARIES = [
 
 
 export const PUBLIC_ROUTES = [
+    {title: 'Home', link: '/'},
     {title: 'Login', link: '/login'},
     {title: 'Registration', link: '/registration'},
     {title: 'Posts', link: '/posts'},
