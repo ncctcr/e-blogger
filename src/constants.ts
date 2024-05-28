@@ -28,3 +28,17 @@ export const LOREM_IPSUM_BODY = `
 \t\t\t\t}
 \t\t\t\t</code></pre>
 `
+
+export const LIBRARIES = [
+    {title: 'ReactJS / NextJS (Frameworks)', detail: 'react / react-dom / next'},
+    {title: 'Redux / Redux Toolkit (State Management)', detail: 'react-redux / @reduxjs/toolkit'},
+    {title: 'Material UI (UI/UX)', detail: '@mui/material / @mui/material-nextjs'},
+    {title: 'Axios (Requests)', detail: 'axios'},
+    {title: 'SweetAlert2 (modals)', detail: 'sweetalert2'},
+    {title: 'Mui TipTap (rich text editor)', detail: 'mui-tiptap / @tiptap/starter-kit'},
+    {title: 'Formik (Forms)', detail: 'formik'},
+    {title: 'Yup (Validator)', detail: 'yup'},
+    {title: 'Cookie (Cookies)', detail: 'cookie / cookies-next'},
+    {title: 'Next Auth (Authentication)', detail: 'next-auth'},
+    {title: 'Mock User Auth (Store users)', detail: 'mock-user-auth'},
+]
