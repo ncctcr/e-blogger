@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Header from "@/components/Header";
 import Box from "@mui/material/Box";
 import Providers from "@/providers";
+import "./globals.css";
 
 const RootLayout = (props: { children: React.ReactNode }) => {
     return (
