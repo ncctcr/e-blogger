@@ -112,3 +112,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Usage
+
+- To create a new post a user must be logged in. After that you will see a button on the `/posts` page that redirects you to the page of creating a new post
+![image](https://github.com/ncctcr/e-blogger/assets/37658170/e2d25961-1324-4f3c-91b5-71914a2a7341)
+
+- To edit/delete an existing post a user must be logged in. After that you will see the edit and delete buttons on the `/posts/{id}` page
+![image](https://github.com/ncctcr/e-blogger/assets/37658170/f0e96e22-c615-4fe6-ae70-ffd800d062f3)
