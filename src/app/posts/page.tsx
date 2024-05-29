@@ -1,8 +1,8 @@
 import React from 'react';
 import PostList from "@/components/PostList";
 import { Metadata } from 'next';
-import CustomBreadcrumbs from "@/components/custom-breadcrumbs/CustomBreadcrumbs";
-import AddNewPostButton from "@/components/AddNewPostButton";
+import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
+
 export const metadata: Metadata = {
     title: 'Blog | Posts',
     description: 'Explore our collection of blog posts. Read articles on various topics, stay updated with the latest trends, and find insightful content from our bloggers.',

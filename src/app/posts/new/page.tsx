@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomBreadcrumbs from "@/components/custom-breadcrumbs/CustomBreadcrumbs";
+import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import Box from "@mui/material/Box";
 import PostCreate from "@/components/PostCreate";
 import {Metadata} from "next";

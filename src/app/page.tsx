@@ -2,7 +2,7 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { Metadata } from 'next';
-import CustomBreadcrumbs from "@/components/custom-breadcrumbs/CustomBreadcrumbs";
+import CustomBreadcrumbs from "@/components/CustomBreadcrumbs";
 import {Grid} from "@mui/material";
 import LibrariesCard from "@/components/LibrariesCard";
 import RoutesCard from "@/components/RoutesCard";

@@ -18,7 +18,9 @@ const RoutesCard: FC<TypeProps> = ({title, routes}) => {
                 <Typography variant={'h5'}>{title}</Typography>
                 <Box display={'flex'} flexDirection={'column'} gap={2} mt={2}>
                     {routes.map((i) => (
-                        <Link component={NextLink} href={i.link}>{i.title}</Link>
+                        <Link component={NextLink} href={i.link} className={'custom-link'}>
+                            <Typography color={'primary.main'}>{i.title}</Typography>
+                        </Link>
                     ))}
                 </Box>
             </CardContent>

@@ -11,3 +11,11 @@ code {
         border-radius: 16px !important;
     }
 }
+
+.custom-link {
+    /*color: inherit;*/
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
