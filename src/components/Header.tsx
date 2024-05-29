@@ -21,7 +21,6 @@ const pages = [
     { title: 'Home', link: '/' },
     { title: 'Posts', link: '/posts' },
 ];
-const settings = ['Logout'];
 
 function ResponsiveAppBar() {
     const router = useRouter()
