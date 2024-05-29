@@ -1,23 +1,9 @@
-'use client'
 import React from 'react';
 import CustomBreadcrumbs from "@/components/custom-breadcrumbs/CustomBreadcrumbs";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
-import {useRouter} from "next/navigation";
-import {useAppStore} from "@/store/hooks";
-import {addNewPost} from "@/store/features/postsSlice";
-import PostForm from "@/components/PostForm";
+import PostCreate from "@/components/PostCreate";
 
-const PostCreate = () => {
-    const router = useRouter()
-    const store = useAppStore()
-
-    const handleSubmit = (values: {title: string, body: string}) => {
-        store.dispatch(addNewPost(values))
-        router.push('/posts')
-    }
-
+const PageCreate = () => {
     return (
         <>
             <CustomBreadcrumbs
@@ -25,14 +11,10 @@ const PostCreate = () => {
                 before={[{title: 'Posts', link: '/posts'}]}
             />
             <Box my={2}>
-                <Card>
-                    <CardContent>
-                        <PostForm onSubmit={handleSubmit}/>
-                    </CardContent>
-                </Card>
+                <PostCreate />
             </Box>
         </>
     );
 };
 
-export default PostCreate;
+export default PageCreate;
