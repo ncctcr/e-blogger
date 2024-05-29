@@ -1,6 +1,6 @@
 {
-  "name": "material-ui-nextjs-ts",
-  "version": "5.0.0",
+  "name": "e-blogger",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
