@@ -13,7 +13,7 @@ const InfoCard = () => {
                     <ul style={{display: 'flex', flexDirection: 'column', gap: 10}}>
                         <li>
                             <Typography>
-                                You can change the application theme by going to <code>src/theme.ts</code> and changing <code>palette.mode</code> from <code>'dark'</code> to <code>'light'</code>
+                                You can change the application theme by going to <code>providers/index.tsx</code> and changing <code>createTheme('dark')</code> from <code>'dark'</code> to <code>'light'</code>
                             </Typography>
                         </li>
                         <li>

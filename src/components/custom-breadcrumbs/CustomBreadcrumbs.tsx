@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import {Breadcrumbs, Skeleton} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import styles from './CustomBreadcrumbs.module.css'
+import Link from "@mui/material/Link";
 
 type TypeProps = {
     current: string
@@ -13,10 +14,12 @@ const CustomBreadcrumbs: FC<TypeProps> = ({before, current}) => {
     return (
         <Breadcrumbs aria-label="breadcrumb">
             {before && before.map((i, index) => (
-                <NextLink key={index} href={i.link} className={styles.before}>{i.title}</NextLink>
+                <Link component={NextLink} key={index} href={i.link} className={styles.before}>
+                    <Typography variant={'h4'}>{i.title}</Typography>
+                </Link>
             ))}
             {current ? (
-                <Typography className={styles.current} color={'text.primary'}>
+                <Typography variant={'h4'} color={'text.primary'}>
                     {current}
                 </Typography>
             ) : (

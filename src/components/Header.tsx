@@ -16,6 +16,7 @@ import BookIcon from '@mui/icons-material/Book';
 import {useState} from "react";
 import { useRouter } from 'next/navigation'
 import {signOut, useSession} from "next-auth/react";
+import {useTheme} from "@mui/system";
 
 const pages = [
     { title: 'Home', link: '/' },
@@ -23,6 +24,7 @@ const pages = [
 ];
 
 const Header = () => {
+    const theme = useTheme();
     const router = useRouter()
     const session = useSession()
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -44,7 +46,7 @@ const Header = () => {
     }
 
     return (
-        <AppBar position="sticky">
+        <AppBar position="sticky" color="default">
             <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <BookIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -58,7 +60,7 @@ const Header = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: theme.palette.text.primary,
                             textDecoration: 'none',
                             cursor: 'pointer'
                         }}
@@ -73,7 +75,6 @@ const Header = () => {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
                         >
                             <MenuIcon />
                         </IconButton>
@@ -106,7 +107,7 @@ const Header = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: theme.palette.text.primary,
                             textDecoration: 'none',
                         }}
                     >
@@ -117,7 +118,7 @@ const Header = () => {
                             <Button
                                 key={index}
                                 onClick={() => handleRoute(page.link)}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ color: theme.palette.text.primary, display: 'block' }}
                             >
                                 {page.title}
                             </Button>
@@ -160,7 +161,7 @@ const Header = () => {
                                 ) : (
                                     <Button
                                         onClick={() => handleRoute('/login')}
-                                        sx={{ my: 2, color: 'white', display: 'block' }}
+                                        sx={{ color: theme.palette.text.primary, display: 'block' }}
                                     >
                                         Login
                                     </Button>
