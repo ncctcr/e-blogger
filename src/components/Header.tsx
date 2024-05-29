@@ -133,7 +133,7 @@ const Header = () => {
                                         <Tooltip title="Open settings">
                                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                                 <Avatar alt={session.data.user?.name!} src={session.data.user?.image!}>
-                                                    {session.data.user?.name ? session.data.user.name[0].toUpperCase() : ''}
+                                                    {session.data.user?.name && !session.data.user?.image ? session.data.user.name[0].toUpperCase() : ''}
                                                 </Avatar>
                                             </IconButton>
                                         </Tooltip>
