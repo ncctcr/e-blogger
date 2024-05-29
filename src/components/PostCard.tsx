@@ -32,7 +32,7 @@ const PostCard: FC<TypeProps> = ({ data }) => {
         <Card>
             <CardContent>
                 <Box mb={2}>
-                    <Typography variant="h5" component="div" fontWeight={'bold'}>
+                    <Typography variant="h3" component="div" fontWeight={'bold'}>
                         {data.title}
                     </Typography>
                 </Box>
