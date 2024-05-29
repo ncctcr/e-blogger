@@ -5,8 +5,8 @@ import PostDetail from "@/components/PostDetail";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: 'Blog | Edit post',
-    description: 'Edit your blog post. Update your content, make changes, and keep your readers engaged with the latest information.',
+    title: 'Blog | Detail post',
+    description: 'View the details of a specific blog post. Explore the content, engage with the author, and discover valuable insights.',
 };
 
 type TypeProps = {
