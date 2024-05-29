@@ -22,7 +22,7 @@ const pages = [
     { title: 'Posts', link: '/posts' },
 ];
 
-function ResponsiveAppBar() {
+const Header = () => {
     const router = useRouter()
     const session = useSession()
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -173,4 +173,4 @@ function ResponsiveAppBar() {
         </AppBar>
     );
 }
-export default ResponsiveAppBar;
+export default Header;
