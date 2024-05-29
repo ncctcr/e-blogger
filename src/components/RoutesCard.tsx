@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 
 type TypeProps = {
     title: string,
-    routes: { title: string, link: string }
+    routes: { title: string, link: string }[]
 }
 
 const RoutesCard: FC<TypeProps> = ({title, routes}) => {
