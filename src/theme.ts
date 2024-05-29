@@ -58,6 +58,13 @@ const theme = createTheme({
                 }
             }
         },
+        MuiAppBar: {
+            styleOverrides: {
+                root: {
+                    zIndex: 2,
+                }
+            }
+        }
     },
 });
 

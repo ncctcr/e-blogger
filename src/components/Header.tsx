@@ -44,7 +44,7 @@ const Header = () => {
     }
 
     return (
-        <AppBar position="sticky" sx={{zIndex: 2}}>
+        <AppBar position="sticky">
             <Container maxWidth="lg">
                 <Toolbar disableGutters>
                     <BookIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
