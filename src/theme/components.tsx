@@ -202,6 +202,13 @@ export const createThemeComponents = (theme: Theme) => ({
             },
         },
     },
+    MuiListItemText: {
+        styleOverrides: {
+            primary: {
+                fontWeight: 600
+            }
+        },
+    },
     MuiListItemIcon: {
         styleOverrides: {
             root: {
