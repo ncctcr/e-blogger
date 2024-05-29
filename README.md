@@ -13,6 +13,7 @@ e-blogger is a modern blogging platform built with Next.js, and a variety of oth
 - [DevDependencies](#devdependencies)
 - [Contributing](#contributing)
 - [License](#license)
+- [Usage](#usage)
 
 ## Installation
 
@@ -22,7 +23,7 @@ To install the necessary dependencies, run:
 npm install
 ```
 
-**Note:** This project was developed using Node.js version 21.1.0 (64-bit executable). Ensure you are using this version or a compatible one to avoid any potential issues.
+**Note:** This project was developed using **Node.js version 21.1.0 (64-bit executable)**. Ensure you are using this version or a compatible one to avoid any potential issues.
 
 ## Development
 
