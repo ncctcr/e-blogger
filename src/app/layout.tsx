@@ -9,14 +9,14 @@ const RootLayout = (props: { children: React.ReactNode }) => {
     return (
         <html lang="en">
             <body>
-            <Providers>
-                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-                <CssBaseline />
-                <Header/>
-                <Box mt={2}>
-                    {props.children}
-                </Box>
-            </Providers>
+                <Providers>
+                    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                    <CssBaseline />
+                    <Header/>
+                    <Box mt={2} component={'main'}>
+                        {props.children}
+                    </Box>
+                </Providers>
             </body>
         </html>
     );
