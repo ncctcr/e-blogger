@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import NextLink from "next/link";
-import {Breadcrumbs, Skeleton} from "@mui/material";
+import {Breadcrumbs} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 
@@ -17,13 +17,9 @@ const CustomBreadcrumbs: FC<TypeProps> = ({before, current}) => {
                     <Typography variant={'h4'}>{i.title}</Typography>
                 </Link>
             ))}
-            {current ? (
-                <Typography variant={'h4'} color={'text.primary'}>
-                    {current}
-                </Typography>
-            ) : (
-                <Skeleton variant='text' width={80}/>
-            )}
+            <Typography variant={'h4'} color={'text.primary'}>
+                {current}
+            </Typography>
         </Breadcrumbs>
     );
 };
