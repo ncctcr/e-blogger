@@ -5,7 +5,7 @@ import CustomBreadcrumbs from "@/components/custom-breadcrumbs/CustomBreadcrumbs
 import AddNewPostButton from "@/components/AddNewPostButton";
 export const metadata: Metadata = {
     title: 'Blog | Posts',
-    description: 'Posts description',
+    description: 'Explore our collection of blog posts. Read articles on various topics, stay updated with the latest trends, and find insightful content from our bloggers.',
 };
 
 const Posts = () => {

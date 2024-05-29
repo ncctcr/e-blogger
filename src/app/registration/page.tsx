@@ -6,6 +6,12 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import NextLink from "next/link";
 import RegistrationForm from "@/components/RegistrationForm";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: 'Blog | Registration',
+    description: 'Create a new account to join our blogging community. Sign up to start creating, sharing, and managing your blog posts.',
+};
 
 const RegistrationPage = () => {
     return (

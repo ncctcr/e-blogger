@@ -6,6 +6,12 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import NextLink from "next/link";
 import LoginForm from "@/components/LoginForm";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: 'Blog | Login',
+    description: 'Log in to your account to access and manage your blog posts. Stay connected with the blogging community and keep your content up-to-date.',
+};
 
 const LoginPage = () => {
     return (
