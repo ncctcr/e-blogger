@@ -22,7 +22,7 @@ To install the necessary dependencies, run:
 npm install
 ```
 
-**Note:** This project was developed using Node.js version 21.1.0 (64-bit executable). Ensure you are using this version or a compatible one to avoid any potential issues.
+**Note:** This project was developed using **Node.js version 21.1.0 (64-bit executable)**. Ensure you are using this version or a compatible one to avoid any potential issues.
 
 ## Development
 
