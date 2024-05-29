@@ -209,19 +209,12 @@ export const createThemeComponents = (theme: Theme) => ({
             },
         },
     },
-    MuiMenu: {
-        styleOverrides: {
-            list: {
-                paddingRight: 8,
-                paddingLeft: 8,
-            },
-        },
-    },
     MuiMenuItem: {
         styleOverrides: {
             root: {
                 paddingTop: 12,
                 paddingBottom: 12,
+                borderRadius: theme.shape.borderRadius,
             },
         },
     },
