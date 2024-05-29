@@ -13,6 +13,7 @@ e-blogger is a modern blogging platform built with Next.js, and a variety of oth
 - [DevDependencies](#devdependencies)
 - [Contributing](#contributing)
 - [License](#license)
+- [Usage](#usage)
 
 ## Installation
 
