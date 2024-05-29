@@ -5,8 +5,13 @@ import {AppRouterCacheProvider} from "@mui/material-nextjs/v14-appRouter";
 import {ThemeProvider} from "@mui/material/styles";
 import * as React from "react";
 import {createTheme} from "@/theme/theme";
+import {FC} from "react";
 
-const Providers = ({children}: {children: React.ReactNode}) => {
+type TypeProps = {
+    children: React.ReactNode
+}
+
+const Providers: FC<TypeProps> = ({children}) => {
     return (
         <SessionProvider>
             <StoreProvider>
