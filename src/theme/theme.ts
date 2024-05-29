@@ -1,6 +1,6 @@
 'use client';
 import { Roboto } from 'next/font/google';
-import {createMuiTheme} from '@mui/material/styles';
+import {createTheme as createMuiTheme} from '@mui/material/styles';
 import {darkPalette, lightPalette} from "@/theme/palette";
 import {createThemeComponents} from "@/theme/components";
 import shape from "@/theme/shape";
