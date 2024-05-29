@@ -1,7 +1,6 @@
 'use client'
 import {useAppSelector, useAppStore} from "@/store/hooks";
 import React, {useEffect, useRef} from "react";
-import {changePageAndFetchPosts, fetchPosts} from "@/store/features/postsSlice";
 import Box from "@mui/material/Box";
 import PostCard from "@/components/PostCard";
 import SkeletonList from "@/components/SkeletonList";
@@ -9,6 +8,7 @@ import AlertMessage from "@/components/AlertMessage";
 import Pagination from '@mui/material/Pagination';
 import AddNewPostButton from "@/components/AddNewPostButton";
 import {useSession} from "next-auth/react";
+import {changePageAndFetchPosts, fetchPosts} from "@/store/posts/postsThunks";
 const PostList = () => {
     const session = useSession()
     const store = useAppStore()

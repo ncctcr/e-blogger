@@ -1,7 +1,6 @@
 'use client'
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {useAppSelector, useAppStore} from "@/store/hooks";
-import {deletePost, editPost, fetchDetailPost} from "@/store/features/postsSlice";
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -19,6 +18,7 @@ import {truncateString} from "@/utils/functions";
 import {useRouter} from "next/navigation";
 import Loading from "@/components/Loading";
 import {useSession} from "next-auth/react";
+import {deletePost, editPost, fetchDetailPost} from "@/store/posts/postsThunks";
 
 type TypeProps = {
     id: number
